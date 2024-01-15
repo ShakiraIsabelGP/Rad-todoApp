@@ -1,0 +1,35 @@
+{:paths   ["src/shared"]
+
+ :deps    {com.fulcrologic/fulcro                 {:mvn/version "3.6.6"}
+           com.fulcrologic/fulcro-rad             {:mvn/version "1.5.5"}
+           com.fulcrologic/fulcro-rad-semantic-ui {:mvn/version "1.0.3"}
+           com.fulcrologic/fulcro-i18n            {:mvn/version "0.0.5-alpha"}
+           com.wsscode/pathom                     {:mvn/version "2.3.0-alpha17"}
+           edn-query-language/eql                 {:mvn/version "1.0.1"}
+           com.taoensso/encore                    {:mvn/version "3.1.0"}
+           com.fulcrologic/guardrails             {:mvn/version "0.0.12"}
+           com.taoensso/tufte                     {:mvn/version "2.1.0"}
+           mount/mount                            {:mvn/version "0.1.12"}
+           hiccup/hiccup                          {:mvn/version "1.0.5"}
+           ring/ring-defaults                     {:mvn/version "0.3.2"}
+           ring/ring-core                         {:mvn/version "1.8.1"}
+           http-kit/http-kit                      {:mvn/version "2.5.0"}
+           com.taoensso/timbre                    {:mvn/version "5.0.0"}
+           org.slf4j/log4j-over-slf4j             {:mvn/version "1.7.30"} ; auto sends log4j to slf4j
+           org.slf4j/jul-to-slf4j                 {:mvn/version "1.7.30"} ; auto sends java.util.logging to slf4j
+           org.slf4j/jcl-over-slf4j               {:mvn/version "1.7.30"} ; auto-sends java.common.logging to slf4j
+           com.fzakaria/slf4j-timbre              {:mvn/version "0.3.19"} ; hooks slf4j to timbre
+           org.clojure/clojurescript              {:mvn/version "1.10.773"}
+           org.clojure/clojure                    {:mvn/version "1.10.1"}}
+
+ :aliases
+ {:datomic   {:extra-paths ["src/datomic"]
+              :extra-deps  {com.datomic/datomic-free           {:mvn/version "0.9.5697" :exclusions [org.slf4j/slf4j-nop]}
+                            com.fulcrologic/fulcro-rad-datomic {:mvn/version "1.0.4"}}}
+
+           :dev       {:extra-paths ["src/dev" "resources"]
+                       :extra-deps  {thheller/shadow-cljs                {:mvn/version "2.11.8"}
+                                     com.fulcrologic/semantic-ui-wrapper {:mvn/version "2.0.1"}
+                                     binaryage/devtools                  {:mvn/version "1.0.0"}
+                                     org.clojure/tools.namespace         {:mvn/version "1.0.0"}}}}}
+

@@ -1,0 +1,19 @@
+{:deps     {:aliases [:dev :test]}
+ :nrepl    {:port 9000}
+ :jvm-opts ["-Xmx2G"]
+ :builds   {:main     {:target     :browser
+                       :output-dir "resources/public/js/main"
+                       :asset-path "/js/main"
+                       :dev        {:compiler-options {:external-config {:guardrails {:emit-spec? true :throw? false}}}}
+                       :modules    {:main {:init-fn com.app.client/init}}
+                       :js-options {:resolve
+                                    {"js-joda"
+                                     {:target :npm
+                                      :require "@js-joda/core" }
+                                     "js-joda-timezone"
+                                     {:target  :npm
+                                      :require "js-joda-timezone/dist/js-joda-timezone-10-year-range.min.js"}}}
+                       :devtools   {:preloads   [com.fulcrologic.fulcro.inspect.preload]
+                                    :after-load com.app.client/refresh}}}}
+
+
